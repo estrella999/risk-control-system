@@ -1,0 +1,11 @@
+.vercel
+.claude
+.s
+__pycache__
+*.pyc
+risk_control.db
+server.log
+vendor
+vendor_linux
+*.tar.gz
+node_modules
