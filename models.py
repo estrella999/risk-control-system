@@ -114,6 +114,9 @@ class AIOutput(Base):
     ai_risk_summary = Column(String)
     ai_recommendation = Column(String)
     ai_explanation = Column(String)
+    ai_risk_summary_zh = Column(String)
+    ai_recommendation_zh = Column(String)
+    ai_explanation_zh = Column(String)
     override_flag = Column(Boolean, default=False)
     override_reason = Column(String)
     governance_follow_up = Column(String)   # 后续处理

@@ -423,7 +423,8 @@ def get_dashboard(db: Session = Depends(get_db)):
         "recent_applications": recent_list,
         "customer_risk_counts": customer_risk,
         "customers_near_limit": near_limit,
-        "portfolio_insight": portfolio_insight,
+        "portfolio_insight": portfolio_insight.get("en", ""),
+        "portfolio_insight_zh": portfolio_insight.get("zh", ""),
     }
 
 
@@ -517,6 +518,9 @@ def get_customer_detail(customer_id: str, db: Session = Depends(get_db)):
                 "ai_risk_summary": ao.ai_risk_summary,
                 "ai_recommendation": ao.ai_recommendation,
                 "ai_explanation": ao.ai_explanation,
+                "ai_risk_summary_zh": ao.ai_risk_summary_zh,
+                "ai_recommendation_zh": ao.ai_recommendation_zh,
+                "ai_explanation_zh": ao.ai_explanation_zh,
                 "override_flag": ao.override_flag,
                 "override_reason": ao.override_reason,
                 "governance_follow_up": ao.governance_follow_up,

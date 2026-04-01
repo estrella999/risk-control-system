@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Risk Control System</title>
+  <title>AI风控系统 | AI Risk Control System</title>
   <link rel="stylesheet" href="/static/style.css">
   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
   <script src="https://unpkg.com/vue-router@4/dist/vue-router.global.prod.js"></script>
@@ -12,11 +12,14 @@
 <body>
   <div id="app">
     <nav class="navbar">
-      <div class="nav-brand">Auto Parts Reverse Factoring — AI Risk Control</div>
+      <div class="nav-brand">{{t('navBrand')}}</div>
       <div class="nav-links">
-        <router-link to="/">Dashboard</router-link>
-        <router-link to="/customers">Customers</router-link>
-        <router-link to="/applications">Applications</router-link>
+        <router-link to="/">{{t('navDashboard')}}</router-link>
+        <router-link to="/customers">{{t('navCustomers')}}</router-link>
+        <router-link to="/applications">{{t('navApplications')}}</router-link>
+        <button class="lang-switch" @click="setLang(currentLang === 'zh' ? 'en' : 'zh')">
+          {{ currentLang === 'zh' ? 'English' : '中文' }}
+        </button>
       </div>
     </nav>
     <main class="container">

@@ -136,6 +136,9 @@ class AIOutputOut(BaseModel):
     ai_risk_summary: Optional[str] = None
     ai_recommendation: Optional[str] = None
     ai_explanation: Optional[str] = None
+    ai_risk_summary_zh: Optional[str] = None
+    ai_recommendation_zh: Optional[str] = None
+    ai_explanation_zh: Optional[str] = None
     override_flag: bool = False
     override_reason: Optional[str] = None
     governance_follow_up: Optional[str] = None

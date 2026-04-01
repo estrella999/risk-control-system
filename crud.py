@@ -257,6 +257,9 @@ def generate_ai_output(db: Session, application_id: str):
         existing.ai_risk_summary = ai_result.get("ai_risk_summary", "")
         existing.ai_recommendation = ai_result.get("ai_recommendation", "")
         existing.ai_explanation = ai_result.get("ai_explanation", "")
+        existing.ai_risk_summary_zh = ai_result.get("ai_risk_summary_zh", "")
+        existing.ai_recommendation_zh = ai_result.get("ai_recommendation_zh", "")
+        existing.ai_explanation_zh = ai_result.get("ai_explanation_zh", "")
         existing.generated_at = datetime.datetime.utcnow()
         db.commit()
         db.refresh(existing)
@@ -277,6 +280,9 @@ def generate_ai_output(db: Session, application_id: str):
             ai_risk_summary=ai_result.get("ai_risk_summary", ""),
             ai_recommendation=ai_result.get("ai_recommendation", ""),
             ai_explanation=ai_result.get("ai_explanation", ""),
+            ai_risk_summary_zh=ai_result.get("ai_risk_summary_zh", ""),
+            ai_recommendation_zh=ai_result.get("ai_recommendation_zh", ""),
+            ai_explanation_zh=ai_result.get("ai_explanation_zh", ""),
             generated_at=datetime.datetime.utcnow(),
         )
         db.add(ai_output)
